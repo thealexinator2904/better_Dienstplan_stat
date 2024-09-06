@@ -3,7 +3,7 @@ import http.cookiejar
 
 def getCookies(userName: str, passWord: str, verbous: bool = False):
     # Definiere die URL, zu der du die POST-Anfrage senden möchtest.
-    url = 'https://dienstplan.st.roteskreuz.at/Account/Login?ReturnUrl=%2F'  # Ersetze mit der tatsächlichen URL.
+    url = 'https://dienstplan.st.roteskreuz.at/Account/Login?ReturnUrl=%2F'
 
     payload = {
         'UserName': userName,

@@ -114,4 +114,6 @@ if __name__ == '__main__':
     html_data = download_dp('2022-08-01', 100,username="", password="", verbous=True)
     csv_data = extract_csv_vals_from_dp(html_data)
 
-    print(csv_data)
+    print(csv_data)    df_all = extract_csv_vals_from_dp(html_data)
+    df_all.to_feather('data.feather')
+    print(df_all)
