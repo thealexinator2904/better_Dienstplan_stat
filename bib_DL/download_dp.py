@@ -1,8 +1,13 @@
 import requests
-import getCookies
 from bs4 import BeautifulSoup
 from datetime import datetime
 import pandas as pd
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__),'bib_DL'))
+
+import getCookies
 
 def extract_string_from_button_element(response, verbous=False):
     # Lese die heruntergeladene Seite mit BeautifulSoup ein.
@@ -33,11 +38,11 @@ def download_dp(starting_with: str, count_of_dps: int, username="", password="",
     dps = []
     i = 0
     headers = {
-        'Accept-Encoding': 'gzip, deflate, br',  # Ersetze mit deinem gewünschten User-Agent.
+        'Accept-Encoding': 'gzip, deflate, br',
         'Accept-Language': 'de-AT,de;q=0.9,en-AT;q=0.8,en;q=0.7,de-DE;q=0.6,en-US;q=0.5',
         'Cache-Control': 'no-cache',
         'Connection': 'keep-alive',
-        'Cookie': cookie_string ,#'NSC_wt_ejfotuqmbovoh=631b100c153840614e9a341793d039c70c1ff27a145525d5f4f58455e445a4a42; ASP.NET_SessionId=socbvjysmm15q5v1kstufjdr; .ASPXAUTH=71CB2B9DFBF9CFF87E63E4714AE16F4D42BCA191992920BD79DB967DB69FF2A1AC86F8E23889C770BEC64B547A0FC369BA3ECAFB6D36C5135435E1DD54DCB1A0C130A47CCC77DCBD961F5FFB1809CA38514A16EA572F341B4338AD3C08B1DEE8',
+        'Cookie': cookie_string ,
         'Host': 'dienstplan.st.roteskreuz.at',
         'Pragma': 'no-cache',
         'Referer': 'https://dienstplan.st.roteskreuz.at/',
